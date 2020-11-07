@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "81689858940",
+    "firebase_url": "https://volunteer-integration-a40ce.firebaseio.com",
+    "project_id": "volunteer-integration-a40ce",
+    "storage_bucket": "volunteer-integration-a40ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81689858940:android:1bc1bd905cbda3a83a0af9",
+        "android_client_info": {
+          "package_name": "com.roger.volunteer_integration"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "81689858940-mg5jgv1f54gfodm5ceqohf8cbr01ue9t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.roger.volunteer_integration",
+            "certificate_hash": "46c3e86a838650f36b8dcf342bd3fcc57fde61cb"
+          }
+        },
+        {
+          "client_id": "81689858940-m97dnqnl80r1815eeu3ji4nra7f6ib40.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZd6_mVRIZTsu6StNItcBrWGp-CvMRrhg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "81689858940-m97dnqnl80r1815eeu3ji4nra7f6ib40.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
