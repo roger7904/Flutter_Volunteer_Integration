@@ -3,17 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:volunteer_integration/constant.dart';
 import 'package:volunteer_integration/login_page.dart';
 import 'package:volunteer_integration/signup/signup_page.dart';
-import 'package:multi_select_flutter/multi_select_flutter.dart';
-
-class Area {
-  final int id;
-  final String content;
-
-  Area({
-    this.id,
-    this.content,
-  });
-}
+import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:intl/intl.dart';
 
 class home_page extends StatefulWidget {
   @override
@@ -21,28 +12,17 @@ class home_page extends StatefulWidget {
 }
 
 class _home_pageState extends State<home_page> {
-  static List<Area> _areas = [
-    Area(id: 1, content: "Taipei"),
-    Area(id: 2, content: "New Taipei"),
-    Area(id: 4, content: "Taoyuan"),
-    Area(id: 7, content: "Taichung"),
-    Area(id: 8, content: "Tainan"),
-    Area(id: 7, content: "Kaohsiung"),
-  ];
-  final _items =
-      _areas.map((area) => MultiSelectItem<Area>(area, area.content)).toList();
-  List<Area> _selectedAreas = [];
-  final _multiSelectKey = GlobalKey<FormFieldState>();
-
   String dropdownValue_area;
   String dropdownValue_time;
   String dropdownValue_period;
   String dropdownValue_charity;
+  String selectTime;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    selectTime = 'Time';
     dropdownValue_area = 'Area';
   }
 
@@ -52,212 +32,156 @@ class _home_pageState extends State<home_page> {
       child: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                // Container(
-                //   height: 35.0,
-                //   alignment: Alignment.center,
-                //   decoration: BoxDecoration(
-                //     borderRadius: BorderRadius.circular(5.0),
-                //     color: Colors.white,
-                //     border: Border.all(
-                //       color: Colors.grey,
-                //     ),
-                //     boxShadow: [
-                //       BoxShadow(
-                //         color: Colors.grey.withOpacity(0.5),
-                //         spreadRadius: 0.5,
-                //         blurRadius: 0.5,
-                //         offset: Offset(0, 3), // changes position of shadow
-                //       ),
-                //     ],
-                //   ),
-                //   child: DropdownButtonHideUnderline(
-                //     child: DropdownButton<String>(
-                //       value: dropdownValue_area,
-                //       style: TextStyle(color: Colors.black),
-                //       onChanged: (String newValue) {
-                //         setState(() {
-                //           dropdownValue_area = newValue;
-                //         });
-                //       },
-                //       items: <String>[
-                //         'Area',
-                //         'Taipei',
-                //         'New Taipei',
-                //         'sadas',
-                //         'adas',
-                //       ].map<DropdownMenuItem<String>>((String value) {
-                //         return DropdownMenuItem<String>(
-                //           value: value,
-                //           child: Text(value),
-                //         );
-                //       }).toList(),
-                //     ),
-                //   ),
-                // ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(
-                      color: Colors.black,
-                      width: 2,
-                    ),
-                  ),
-                  child: Column(
-                    children: <Widget>[
-                      MultiSelectBottomSheetField(
-                        initialChildSize: 0.4,
-                        listType: MultiSelectListType.CHIP,
-                        searchable: true,
-                        buttonText: Text("Area"),
-                        title: Text("Areas"),
-                        items: _items,
-                        onConfirm: (values) {
-                          _selectedAreas = values;
-                        },
-                        chipDisplay: MultiSelectChipDisplay(
-                          onTap: (value) {
-                            setState(() {
-                              _selectedAreas.remove(value);
-                            });
-                          },
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Container(
+                    height: 35.0,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5.0),
+                      color: Colors.white,
+                      border: Border.all(
+                        color: Colors.grey,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 0.5,
+                          blurRadius: 0.5,
+                          offset: Offset(0, 1.5), // changes position of shadow
                         ),
+                      ],
+                    ),
+                    child: DropdownButtonHideUnderline(
+                      child: DropdownButton<String>(
+                        value: dropdownValue_area,
+                        style: TextStyle(color: Colors.black),
+                        onChanged: (String newValue) {
+                          setState(() {
+                            dropdownValue_area = newValue;
+                          });
+                        },
+                        items: <String>[
+                          'Area',
+                          'Taipei',
+                          'New Taipei',
+                          'sadas',
+                          'adas',
+                        ].map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList(),
                       ),
-                      _selectedAreas == null || _selectedAreas.isEmpty
-                          ? Container(
-                              padding: EdgeInsets.all(10),
-                              alignment: Alignment.centerLeft,
-                              child: Text(
-                                "None selected",
-                                style: TextStyle(color: Colors.black54),
-                              ))
-                          : Container(),
-                    ],
-                  ),
-                ),
-                Container(
-                  height: 35.0,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5.0),
-                    color: Colors.white,
-                    // border: Border.all(),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 3,
-                        offset: Offset(0, 3), // changes position of shadow
-                      ),
-                    ],
-                  ),
-                  child: DropdownButtonHideUnderline(
-                    child: DropdownButton<String>(
-                      value: dropdownValue_area,
-                      style: TextStyle(color: Colors.black),
-                      onChanged: (String newValue) {
-                        setState(() {
-                          dropdownValue_area = newValue;
-                        });
-                      },
-                      items: <String>[
-                        'Area',
-                        'Taipei',
-                        'New Taipei',
-                        'sadas',
-                        'adas',
-                      ].map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        );
-                      }).toList(),
                     ),
                   ),
-                ),
-                Container(
-                  height: 35.0,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5.0),
-                    color: Colors.white,
-                    // border: Border.all(),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 3,
-                        offset: Offset(0, 3), // changes position of shadow
+                  Container(
+                    height: 35.0,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5.0),
+                      color: Colors.white,
+                      border: Border.all(
+                        color: Colors.grey,
                       ),
-                    ],
-                  ),
-                  child: DropdownButtonHideUnderline(
-                    child: DropdownButton<String>(
-                      value: dropdownValue_area,
-                      style: TextStyle(color: Colors.black),
-                      onChanged: (String newValue) {
-                        setState(() {
-                          dropdownValue_area = newValue;
-                        });
-                      },
-                      items: <String>[
-                        'Area',
-                        'Taipei',
-                        'New Taipei',
-                        'sadas',
-                        'adas',
-                      ].map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        );
-                      }).toList(),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 0.5,
+                          blurRadius: 0.5,
+                          offset: Offset(0, 1.5), // changes position of shadow
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      children: <Widget>[
+                        FlatButton(
+                          onPressed: () {
+                            DatePicker.showDatePicker(context,
+                                showTitleActions: true,
+                                minTime: DateTime(2019, 1, 1),
+                                maxTime: DateTime.now(),
+                                theme: DatePickerTheme(
+                                    headerColor: Colors.teal,
+                                    backgroundColor: Colors.white,
+                                    itemStyle: TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18),
+                                    cancelStyle: TextStyle(
+                                        color: Colors.white, fontSize: 16),
+                                    doneStyle: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 16)), onConfirm: (date) {
+                              setState(() {
+                                selectTime =
+                                    DateFormat('yyyy-MM-dd').format(date);
+                              });
+                              ;
+                            },
+                                currentTime: DateTime.now(),
+                                locale: LocaleType.en);
+                          },
+                          child: Text(
+                            selectTime,
+                          ),
+                        ),
+                        Icon(
+                          Icons.arrow_drop_down,
+                          color: Colors.black,
+                          size: 20.0,
+                        ),
+                      ],
                     ),
                   ),
-                ),
-                Container(
-                  height: 35.0,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5.0),
-                    color: Colors.white,
-                    // border: Border.all(),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 3,
-                        offset: Offset(0, 3), // changes position of shadow
+                  Container(
+                    height: 35.0,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5.0),
+                      color: Colors.white,
+                      border: Border.all(
+                        color: Colors.grey,
                       ),
-                    ],
-                  ),
-                  child: DropdownButtonHideUnderline(
-                    child: DropdownButton<String>(
-                      value: dropdownValue_area,
-                      style: TextStyle(color: Colors.black),
-                      onChanged: (String newValue) {
-                        setState(() {
-                          dropdownValue_area = newValue;
-                        });
-                      },
-                      items: <String>[
-                        'Area',
-                        'Taipei',
-                        'New Taipei',
-                        'sadas',
-                        'adas',
-                      ].map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        );
-                      }).toList(),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 0.5,
+                          blurRadius: 0.5,
+                          offset: Offset(0, 1.5), // changes position of shadow
+                        ),
+                      ],
+                    ),
+                    child: DropdownButtonHideUnderline(
+                      child: DropdownButton<String>(
+                        value: dropdownValue_area,
+                        style: TextStyle(color: Colors.black),
+                        onChanged: (String newValue) {
+                          setState(() {
+                            dropdownValue_area = newValue;
+                          });
+                        },
+                        items: <String>[
+                          'Area',
+                          'Taipei',
+                          'New Taipei',
+                          'sadas',
+                          'adas',
+                        ].map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList(),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 10.0),
