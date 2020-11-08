@@ -41,3 +41,9 @@ const font_grey = TextStyle(
   color: Colors.grey,
   fontWeight: FontWeight.normal,
 );
+
+const font_12_black = TextStyle(
+  fontSize: 12.0,
+  color: Colors.black,
+  fontWeight: FontWeight.normal,
+);
