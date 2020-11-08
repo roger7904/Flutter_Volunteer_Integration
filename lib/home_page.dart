@@ -13,8 +13,6 @@ class home_page extends StatefulWidget {
 
 class _home_pageState extends State<home_page> {
   String dropdownValue_area;
-  String dropdownValue_time;
-  String dropdownValue_period;
   String dropdownValue_charity;
   String selectTime;
 
@@ -24,6 +22,7 @@ class _home_pageState extends State<home_page> {
     super.initState();
     selectTime = 'Time';
     dropdownValue_area = 'Area';
+    dropdownValue_charity = 'Charity';
   }
 
   @override
@@ -58,7 +57,8 @@ class _home_pageState extends State<home_page> {
                     child: DropdownButtonHideUnderline(
                       child: DropdownButton<String>(
                         value: dropdownValue_area,
-                        style: TextStyle(color: Colors.black),
+                        iconEnabledColor: Colors.grey,
+                        style: TextStyle(color: Colors.grey),
                         onChanged: (String newValue) {
                           setState(() {
                             dropdownValue_area = newValue;
@@ -68,12 +68,19 @@ class _home_pageState extends State<home_page> {
                           'Area',
                           'Taipei',
                           'New Taipei',
-                          'sadas',
-                          'adas',
+                          'Taoyuan',
+                          'Taichung',
+                          'Tainan',
+                          'Kaohsiung',
                         ].map<DropdownMenuItem<String>>((String value) {
                           return DropdownMenuItem<String>(
                             value: value,
-                            child: Text(value),
+                            child: Text(
+                              value,
+                              style: TextStyle(
+                                color: Colors.grey,
+                              ),
+                            ),
                           );
                         }).toList(),
                       ),
@@ -98,6 +105,7 @@ class _home_pageState extends State<home_page> {
                       ],
                     ),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         FlatButton(
                           onPressed: () {
@@ -128,11 +136,14 @@ class _home_pageState extends State<home_page> {
                           },
                           child: Text(
                             selectTime,
+                            style: TextStyle(
+                              color: Colors.grey,
+                            ),
                           ),
                         ),
                         Icon(
                           Icons.arrow_drop_down,
-                          color: Colors.black,
+                          color: Colors.grey,
                           size: 20.0,
                         ),
                       ],
@@ -158,23 +169,29 @@ class _home_pageState extends State<home_page> {
                     ),
                     child: DropdownButtonHideUnderline(
                       child: DropdownButton<String>(
-                        value: dropdownValue_area,
-                        style: TextStyle(color: Colors.black),
+                        iconEnabledColor: Colors.grey,
+                        value: dropdownValue_charity,
+                        style: TextStyle(color: Colors.grey),
                         onChanged: (String newValue) {
                           setState(() {
-                            dropdownValue_area = newValue;
+                            dropdownValue_charity = newValue;
                           });
                         },
                         items: <String>[
-                          'Area',
-                          'Taipei',
-                          'New Taipei',
-                          'sadas',
-                          'adas',
+                          'Charity',
+                          'Option one',
+                          'Option two',
+                          'Option three',
+                          'Option four',
                         ].map<DropdownMenuItem<String>>((String value) {
                           return DropdownMenuItem<String>(
                             value: value,
-                            child: Text(value),
+                            child: Text(
+                              value,
+                              style: TextStyle(
+                                color: Colors.grey,
+                              ),
+                            ),
                           );
                         }).toList(),
                       ),
