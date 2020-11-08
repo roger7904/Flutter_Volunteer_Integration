@@ -35,3 +35,9 @@ const font_20_orangeAccent = TextStyle(
   color: Colors.orangeAccent,
   fontWeight: FontWeight.normal,
 );
+
+const font_grey = TextStyle(
+  fontSize: 14.0,
+  color: Colors.grey,
+  fontWeight: FontWeight.normal,
+);

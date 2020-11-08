@@ -5,6 +5,8 @@ import 'package:volunteer_integration/login_page.dart';
 import 'package:volunteer_integration/signup/signup_page.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:intl/intl.dart';
+import 'package:volunteer_integration/volunteer_sort.dart';
+import 'reusable_icon.dart';
 
 class home_page extends StatefulWidget {
   @override
@@ -12,17 +14,23 @@ class home_page extends StatefulWidget {
 }
 
 class _home_pageState extends State<home_page> {
-  String dropdownValue_area;
-  String dropdownValue_charity;
-  String selectTime;
-
+  bool hospital_selected;
+  bool children_selected;
+  bool old_selected;
+  bool ruralarea_selected;
+  bool normal_selected;
+  bool blood_selected;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    selectTime = 'Time';
-    dropdownValue_area = 'Area';
-    dropdownValue_charity = 'Charity';
+
+    hospital_selected = false;
+    children_selected = false;
+    old_selected = false;
+    ruralarea_selected = false;
+    normal_selected = false;
+    blood_selected = false;
   }
 
   @override
@@ -31,174 +39,9 @@ class _home_pageState extends State<home_page> {
       child: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Container(
-                    height: 35.0,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5.0),
-                      color: Colors.white,
-                      border: Border.all(
-                        color: Colors.grey,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 0.5,
-                          blurRadius: 0.5,
-                          offset: Offset(0, 1.5), // changes position of shadow
-                        ),
-                      ],
-                    ),
-                    child: DropdownButtonHideUnderline(
-                      child: DropdownButton<String>(
-                        value: dropdownValue_area,
-                        iconEnabledColor: Colors.grey,
-                        style: TextStyle(color: Colors.grey),
-                        onChanged: (String newValue) {
-                          setState(() {
-                            dropdownValue_area = newValue;
-                          });
-                        },
-                        items: <String>[
-                          'Area',
-                          'Taipei',
-                          'New Taipei',
-                          'Taoyuan',
-                          'Taichung',
-                          'Tainan',
-                          'Kaohsiung',
-                        ].map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(
-                              value,
-                              style: TextStyle(
-                                color: Colors.grey,
-                              ),
-                            ),
-                          );
-                        }).toList(),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    height: 35.0,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5.0),
-                      color: Colors.white,
-                      border: Border.all(
-                        color: Colors.grey,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 0.5,
-                          blurRadius: 0.5,
-                          offset: Offset(0, 1.5), // changes position of shadow
-                        ),
-                      ],
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        FlatButton(
-                          onPressed: () {
-                            DatePicker.showDatePicker(context,
-                                showTitleActions: true,
-                                minTime: DateTime(2019, 1, 1),
-                                maxTime: DateTime.now(),
-                                theme: DatePickerTheme(
-                                    headerColor: Colors.teal,
-                                    backgroundColor: Colors.white,
-                                    itemStyle: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18),
-                                    cancelStyle: TextStyle(
-                                        color: Colors.white, fontSize: 16),
-                                    doneStyle: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 16)), onConfirm: (date) {
-                              setState(() {
-                                selectTime =
-                                    DateFormat('yyyy-MM-dd').format(date);
-                              });
-                              ;
-                            },
-                                currentTime: DateTime.now(),
-                                locale: LocaleType.en);
-                          },
-                          child: Text(
-                            selectTime,
-                            style: TextStyle(
-                              color: Colors.grey,
-                            ),
-                          ),
-                        ),
-                        Icon(
-                          Icons.arrow_drop_down,
-                          color: Colors.grey,
-                          size: 20.0,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    height: 35.0,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5.0),
-                      color: Colors.white,
-                      border: Border.all(
-                        color: Colors.grey,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 0.5,
-                          blurRadius: 0.5,
-                          offset: Offset(0, 1.5), // changes position of shadow
-                        ),
-                      ],
-                    ),
-                    child: DropdownButtonHideUnderline(
-                      child: DropdownButton<String>(
-                        iconEnabledColor: Colors.grey,
-                        value: dropdownValue_charity,
-                        style: TextStyle(color: Colors.grey),
-                        onChanged: (String newValue) {
-                          setState(() {
-                            dropdownValue_charity = newValue;
-                          });
-                        },
-                        items: <String>[
-                          'Charity',
-                          'Option one',
-                          'Option two',
-                          'Option three',
-                          'Option four',
-                        ].map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(
-                              value,
-                              style: TextStyle(
-                                color: Colors.grey,
-                              ),
-                            ),
-                          );
-                        }).toList(),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+            volunteer_sort(),
+            SizedBox(
+              height: 10.0,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 10.0),
@@ -210,7 +53,123 @@ class _home_pageState extends State<home_page> {
                 ),
               ),
             ),
-            Row(),
+            SizedBox(
+              height: 10.0,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  reusable_icon(
+                    onPress: () {
+                      setState(() {
+                        if (hospital_selected) {
+                          hospital_selected = false;
+                        } else {
+                          hospital_selected = true;
+                        }
+                      });
+                    },
+                    icondata: Icons.local_hospital,
+                    colour: hospital_selected ? Colors.teal : Colors.grey[800],
+                    text_content: 'Hospital',
+                    text_style: TextStyle(
+                      color: hospital_selected ? Colors.teal : Colors.grey[800],
+                    ),
+                  ),
+                  reusable_icon(
+                    onPress: () {
+                      setState(() {
+                        if (children_selected) {
+                          children_selected = false;
+                        } else {
+                          children_selected = true;
+                        }
+                      });
+                    },
+                    icondata: Icons.child_care,
+                    colour: children_selected ? Colors.teal : Colors.grey[800],
+                    text_content: 'Children',
+                    text_style: TextStyle(
+                      color: children_selected ? Colors.teal : Colors.grey[800],
+                    ),
+                  ),
+                  reusable_icon(
+                    onPress: () {
+                      setState(() {
+                        if (old_selected) {
+                          old_selected = false;
+                        } else {
+                          old_selected = true;
+                        }
+                      });
+                    },
+                    icondata: Icons.wheelchair_pickup,
+                    colour: old_selected ? Colors.teal : Colors.grey[800],
+                    text_content: 'Old',
+                    text_style: TextStyle(
+                      color: old_selected ? Colors.teal : Colors.grey[800],
+                    ),
+                  ),
+                  reusable_icon(
+                    onPress: () {
+                      setState(() {
+                        if (ruralarea_selected) {
+                          ruralarea_selected = false;
+                        } else {
+                          ruralarea_selected = true;
+                        }
+                      });
+                    },
+                    icondata: Icons.landscape_outlined,
+                    colour: ruralarea_selected ? Colors.teal : Colors.grey[800],
+                    text_content: 'Rural Area',
+                    text_style: TextStyle(
+                      color:
+                          ruralarea_selected ? Colors.teal : Colors.grey[800],
+                    ),
+                  ),
+                  reusable_icon(
+                    onPress: () {
+                      setState(() {
+                        if (normal_selected) {
+                          normal_selected = false;
+                        } else {
+                          normal_selected = true;
+                        }
+                      });
+                    },
+                    icondata: Icons.fact_check_outlined,
+                    colour: normal_selected ? Colors.teal : Colors.grey[800],
+                    text_content: 'Normal',
+                    text_style: TextStyle(
+                      color: normal_selected ? Colors.teal : Colors.grey[800],
+                    ),
+                  ),
+                  reusable_icon(
+                    onPress: () {
+                      setState(() {
+                        if (blood_selected) {
+                          blood_selected = false;
+                        } else {
+                          blood_selected = true;
+                        }
+                      });
+                    },
+                    icondata: Icons.favorite,
+                    colour: blood_selected ? Colors.teal : Colors.grey[800],
+                    text_content: 'Blood',
+                    text_style: TextStyle(
+                      color: blood_selected ? Colors.teal : Colors.grey[800],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
             Padding(
               padding: const EdgeInsets.only(left: 10.0),
               child: Container(
@@ -221,7 +180,54 @@ class _home_pageState extends State<home_page> {
                 ),
               ),
             ),
-            Column(),
+            SizedBox(
+              height: 10.0,
+            ),
+            Container(
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        child: Image(
+                          image: AssetImage('images/activity.jpg'),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          Text('Event'),
+                          Text('Event Time'),
+                        ],
+                      ),
+                      Row(
+                        children: <Widget>[
+                          Text('Event Address'),
+                          Text('Event Organizer'),
+                        ],
+                      ),
+                      Text('Event Simple Description'),
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Icon(
+                        Icons.favorite_border,
+                        size: 20.0,
+                      ),
+                      Icon(
+                        Icons.calendar_today_outlined,
+                        size: 20.0,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
