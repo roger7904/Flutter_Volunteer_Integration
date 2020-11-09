@@ -12,6 +12,6 @@ Furthermore, people are always passive to receive the volunteer events, we might
 
 Integrates the volunteer organization on one platform, making users not only receive the activities in real-time but also getting more comprehensive information.
 
-## UI 
+## UI intro
 
 ![app1](docs/O.gif)          ![app2](docs/V.gif)          ![app3](docs/H1.gif)          ![app4](docs/H2.gif)
