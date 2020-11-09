@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:volunteer_integration/constant.dart';
-import 'package:volunteer_integration/home_page.dart';
-import 'package:volunteer_integration/login_page.dart';
+import 'package:volunteer_integration/login/login_page.dart';
 
 class signup_v_page3 extends StatefulWidget {
   @override
@@ -18,14 +17,18 @@ class _signup_v_page3State extends State<signup_v_page3> {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.teal,
-          title: Center(child: Text("Sign up")),
+          title: Center(
+              child: Padding(
+            padding: const EdgeInsets.only(right: 50.0),
+            child: Text("Sign up"),
+          )),
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () => Navigator.of(context).pop(),
           ),
         ),
-        body: SingleChildScrollView(
-          child: Center(
+        body: Center(
+          child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[

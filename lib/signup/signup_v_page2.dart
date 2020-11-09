@@ -10,7 +10,11 @@ class signup_v_page2 extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.teal,
-          title: Center(child: Text("Sign up")),
+          title: Center(
+              child: Padding(
+            padding: const EdgeInsets.only(right: 50.0),
+            child: Text("Sign up"),
+          )),
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () => Navigator.of(context).pop(),

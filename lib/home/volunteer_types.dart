@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'reusable_icon.dart';
+import 'package:volunteer_integration/reusableObject/reusable_icon.dart';
+
 
 class volunteer_types extends StatefulWidget {
   @override

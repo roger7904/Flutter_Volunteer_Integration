@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:volunteer_integration/constant.dart';
-import 'package:volunteer_integration/volunteer_sort.dart';
-import 'package:volunteer_integration/volunteer_types.dart';
-import 'reusable_activity.dart';
+import 'volunteer_sort.dart';
+import 'volunteer_types.dart';
+import 'package:volunteer_integration/reusableObject/reusable_activity.dart';
 
 class home_page extends StatefulWidget {
   @override

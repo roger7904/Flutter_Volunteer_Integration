@@ -2,9 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:volunteer_integration/constant.dart';
-import 'package:volunteer_integration/home_page.dart';
-import 'package:volunteer_integration/signup/signup_v_page2.dart';
-import 'main_page.dart';
+import '../main_page.dart';
 
 enum User_identity {
   organizer,

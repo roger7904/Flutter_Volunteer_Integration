@@ -1,9 +1,7 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:volunteer_integration/constant.dart';
-import 'package:volunteer_integration/login_page.dart';
 import 'package:volunteer_integration/signup/signup_page.dart';
-import 'home_page.dart';
+import 'package:volunteer_integration/login/login_page.dart';
+import 'home/home_page.dart';
 
 class main_page extends StatefulWidget {
   @override
@@ -46,10 +44,19 @@ class _main_pageState extends State<main_page> {
                             builder: (context) => login_page(),
                           ),
                         );
+                        break;
+                      case 'Sign up':
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => signup_page(),
+                          ),
+                        );
+                        break;
                     }
                   },
                   itemBuilder: (BuildContext context) {
-                    return {'Logout'}.map((String choice) {
+                    return {'Logout', 'Sign up'}.map((String choice) {
                       return PopupMenuItem<String>(
                         value: choice,
                         child: Text(choice),

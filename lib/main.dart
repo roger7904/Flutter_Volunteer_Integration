@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:volunteer_integration/home_page.dart';
+import 'package:volunteer_integration/main_page.dart';
 import 'package:volunteer_integration/signup/signup_page.dart';
-import 'main_page.dart';
 
 void main() => runApp(MyApp());
 

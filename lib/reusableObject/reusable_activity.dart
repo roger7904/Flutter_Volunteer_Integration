@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'constant.dart';
+import '../constant.dart';
 
 class reusable_activity extends StatelessWidget {
   const reusable_activity({
