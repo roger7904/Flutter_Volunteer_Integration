@@ -10,7 +10,7 @@ Furthermore, people are always passive to receive the volunteer events, we might
 
 ## Goal of this APP
 
-Integrates the volunteer organization on one platform, making users not only receive the activities in real-time but also getting more comprehensive information.
+Integrates the volunteer organization on one platform, making users not only receive the activities in real-time but also get more comprehensive information.
 
 ## UI progress rate
 
