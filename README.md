@@ -14,15 +14,23 @@
 
 ## List of Contents
 
-1. [Backend Server](#backendserver)
-2. [Database](#database)
-3. [Built With](#builtwith)
-4. [Architecture](#architecture)
+1. [Features](#features)
+2. [Demo](#demo)
+3. [Backend Server](#backendserver)
+4. [Database](#database)
+5. [Architecture](#architecture)
+6. [Dependencies](#dependencies)
+
+## Features
+
+## Demo
 
 ## Backend Server
 
 ## Database
 
-## Built With
-
 ## Architecture
+
+## Dependencies
+
+
