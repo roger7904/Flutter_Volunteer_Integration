@@ -14,9 +14,9 @@
 
 ## List of Contents
 
-1. [Backend Server](#backend server)
+1. [Backend Server](#backendserver)
 2. [Database](#database)
-3. [Built With](#built with)
+3. [Built With](#builtwith)
 4. [Architecture](#architecture)
 
 ## Backend Server
