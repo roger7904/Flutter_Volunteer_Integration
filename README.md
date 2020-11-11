@@ -1,17 +1,21 @@
-# Volunteer_integrationAPP
+# <div align="center"><img src="docs/logo.png" alt="icon" width=30> Volunteer_IntegrationAPP</div>
 
-An app only used to practice laying out UI and contains some simple functions.
+<div align="center".......................
+
+
+![flutter](https://img.shields.io/badge/Flutter-Framework-green?logo=flutter)
+![Dart](https://img.shields.io/badge/Dart-Language-blue?logo=dart)
+
+</div>
+
 ***
 
-## Why choose this topic
+## Goal of this App
 
-The volunteer information is too scattered to be integrated.
-Furthermore, people are always passive to receive the volunteer events, we might just get the information when we sometimes browse the internet or social media.
+## Backend Server
 
-## Goal of this APP
+## Database
 
-Integrates the volunteer organization on one platform, making users not only receive the activities in real-time but also get more comprehensive information.
+## Built With
 
-## UI progress rate
-
-![app1](docs/O.gif)          ![app2](docs/V.gif)          ![app3](docs/H1.gif)          ![app4](docs/H2.gif)
+## Architecture
