@@ -1,4 +1,4 @@
-## Volunteer_integrationAPP
+# Volunteer_integrationAPP
 
 An app only used to practice laying out UI and contains some simple functions.
 ***
