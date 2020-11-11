@@ -10,7 +10,14 @@
 
 ***
 
-## Goal of this App
+### Introducing Prism Premium
+
+## List of Contents
+
+1. [Backend Server](#backend server)
+2. [Database](#database)
+3. [Built With](#built with)
+4. [Architecture](#architecture)
 
 ## Backend Server
 
