@@ -36,7 +36,7 @@
 
 ## Dependencies
 
-## Security
+## Server Security
 
 **Fail2ban**
 
