@@ -44,7 +44,8 @@
 
 ### Install
 
-'sudo apt install fail2ban
-
+'''
+sudo apt install fail2ban
+'''
 
 
