@@ -46,5 +46,8 @@
 ```
 $ sudo apt install fail2ban
 ```
-
+**Verify Fail2ban is start or not**
+```
+$ sudo systemctl status fail2ban
+```
 
