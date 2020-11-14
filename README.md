@@ -38,4 +38,13 @@
 
 ## Security
 
+### Fail2ban
+
+Fail2ban is a tool that helps protect your Linux machine from brute-force and other automated attacks by monitoring the services logs for malicious activity.
+
+### Install
+
+___sudo apt install fail2ban
+
+
 
