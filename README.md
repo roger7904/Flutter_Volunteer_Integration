@@ -1,6 +1,6 @@
 # <div align="center"><img src="docs/logo.png" alt="icon" width=30> Volunteer_IntegrationAPP</div>
 
-<div align="center">Text test ??? center?
+<div align="center">............................................
 
 
 ![flutter](https://img.shields.io/badge/Flutter-Framework-green?logo=flutter)
@@ -11,6 +11,8 @@
 ***
 
 ### Introducing Volunteer_Integration
+
+...........................
 
 ## List of Contents
 
