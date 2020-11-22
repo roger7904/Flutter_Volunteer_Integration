@@ -36,7 +36,16 @@ class _login_pageState extends State<login_page> {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.teal,
-          title: Center(child: Text("Login")),
+          title: Center(
+            child: Padding(
+              padding: const EdgeInsets.only(right: 50.0),
+              child: Text("Login"),
+            ),
+          ),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back, color: Colors.white),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
         ),
         body: Center(
           child: SingleChildScrollView(
@@ -156,12 +165,7 @@ class _login_pageState extends State<login_page> {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => main_page(),
-                        ),
-                      );
+                      Navigator.pushNamed(context, main_page.id);
                     },
                   ),
                 ),

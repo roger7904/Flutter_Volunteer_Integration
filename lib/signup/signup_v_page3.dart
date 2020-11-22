@@ -190,12 +190,7 @@ class _signup_v_page3State extends State<signup_v_page3> {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => login_page(),
-                        ),
-                      );
+                      Navigator.pushNamed(context, login_page.id);
                     },
                   ),
                 ),

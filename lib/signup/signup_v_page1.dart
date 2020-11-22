@@ -146,12 +146,7 @@ class signup_v_page1 extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => signup_v_page2(),
-                        ),
-                      );
+                      Navigator.pushNamed(context, signup_v_page2.id);
                     },
                   ),
                 ),

@@ -2,28 +2,26 @@ import 'package:flutter/material.dart';
 import 'signup_v_page1.dart';
 import 'signup_o_page1.dart';
 import 'package:volunteer_integration/constant.dart';
+import 'package:volunteer_integration/components/rounded_button.dart';
 
 class signup_page extends StatelessWidget {
   static const String id = 'signup_page';
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: signup_page_scaffold(),
-    );
-  }
-}
-
-class signup_page_scaffold extends StatelessWidget {
-  const signup_page_scaffold({
-    Key key,
-  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
-        title: Center(child: Text("Volunteer Integration")),
+        title: Center(
+          child: Padding(
+            padding: const EdgeInsets.only(right: 50.0),
+            child: Text("Volunteer Integration"),
+          ),
+        ),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
       ),
       body: Center(
         child: Column(
@@ -54,29 +52,12 @@ class signup_page_scaffold extends StatelessWidget {
             SizedBox(
               height: 20.0,
             ),
-            Container(
-              child: FlatButton(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(18.0),
-                    side: BorderSide(color: Colors.white)),
-                color: Colors.grey[700],
-                textColor: Colors.white,
-                padding: EdgeInsets.fromLTRB(40, 25, 40, 25),
-                child: Text(
-                  'Organizer',
-                  style: TextStyle(
-                    fontSize: 18.0,
-                  ),
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => signup_o_page1(),
-                    ),
-                  );
-                },
-              ),
+            RoundedButton(
+              title: 'Organizer',
+              colour: Colors.teal,
+              onPressed: () {
+                Navigator.pushNamed(context, signup_o_page1.id);
+              },
             ),
             SizedBox(
               height: 10.0,
@@ -88,29 +69,12 @@ class signup_page_scaffold extends StatelessWidget {
             SizedBox(
               height: 10.0,
             ),
-            Container(
-              child: FlatButton(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(18.0),
-                    side: BorderSide(color: Colors.white)),
-                color: Colors.grey[700],
-                textColor: Colors.white,
-                padding: EdgeInsets.fromLTRB(40, 25, 40, 25),
-                child: Text(
-                  'Volunteer',
-                  style: TextStyle(
-                    fontSize: 18.0,
-                  ),
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => signup_v_page1(),
-                    ),
-                  );
-                },
-              ),
+            RoundedButton(
+              title: 'Volunteer',
+              colour: Colors.teal,
+              onPressed: () {
+                Navigator.pushNamed(context, signup_v_page1.id);
+              },
             ),
             SizedBox(
               height: 60.0,

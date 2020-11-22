@@ -99,12 +99,7 @@ class signup_o_page2 extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => signup_o_page3(),
-                        ),
-                      );
+                      Navigator.pushNamed(context, signup_o_page3.id);
                     },
                   ),
                 ),
