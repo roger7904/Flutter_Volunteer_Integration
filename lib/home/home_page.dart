@@ -5,6 +5,7 @@ import 'volunteer_types.dart';
 import 'package:volunteer_integration/reusableObject/reusable_activity.dart';
 
 class home_page extends StatefulWidget {
+  static const String id = 'home_page';
   @override
   _home_pageState createState() => _home_pageState();
 }

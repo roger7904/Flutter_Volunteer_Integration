@@ -4,6 +4,7 @@ import 'package:volunteer_integration/login/login_page.dart';
 import 'home/home_page.dart';
 
 class main_page extends StatefulWidget {
+  static const String id = 'main_page';
   @override
   _main_pageState createState() => _main_pageState();
 }

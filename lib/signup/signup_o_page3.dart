@@ -4,6 +4,7 @@ import 'package:volunteer_integration/constant.dart';
 import 'package:volunteer_integration/login/login_page.dart';
 
 class signup_o_page3 extends StatefulWidget {
+  static const String id = 'signup_o_page3';
   @override
   _signup_o_page3State createState() => _signup_o_page3State();
 }

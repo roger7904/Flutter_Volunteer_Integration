@@ -4,6 +4,7 @@ import 'package:volunteer_integration/constant.dart';
 import 'package:volunteer_integration/signup/signup_o_page3.dart';
 
 class signup_o_page2 extends StatelessWidget {
+  static const String id = 'signup_o_page2';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

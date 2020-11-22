@@ -10,6 +10,7 @@ enum User_identity {
 }
 
 class login_page extends StatefulWidget {
+  static const String id = 'login_page';
   @override
   _login_pageState createState() => _login_pageState();
 }
