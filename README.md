@@ -32,6 +32,12 @@
 socket chat sqlite
 
 pushnotification firebase?
+
+
+calculate schedule
+
+docker k8s? CI/CD
+
 ## Database
 firebase
 sqlite
