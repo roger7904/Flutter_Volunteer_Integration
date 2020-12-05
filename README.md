@@ -30,6 +30,8 @@
 
 ## Backend Server
 socket chat sqlite
+
+pushnotification firebase?
 ## Database
 firebase
 sqlite
