@@ -29,18 +29,23 @@
 ## Demo
 
 ## Backend Server
+firebase and build by self
+
 socket chat sqlite
 
 pushnotification firebase?
 
+calculate 
 
-calculate schedule
+schedule
 
 docker k8s? CI/CD
 
 ## Database
 firebase
+
 sqlite
+
 ## Architecture
 
 ## Dependencies
