@@ -29,9 +29,10 @@
 ## Demo
 
 ## Backend Server
-
+socket chat sqlite
 ## Database
-
+firebase
+sqlite
 ## Architecture
 
 ## Dependencies
