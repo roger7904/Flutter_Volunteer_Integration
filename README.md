@@ -31,7 +31,7 @@
 ## Backend Server
 firebase and build by self
 
-socket chat sqlite
+socket?
 
 pushnotification firebase?
 
