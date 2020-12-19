@@ -144,7 +144,8 @@ sqlite
 >or put in crontab for routine execution.(This example lets it run every five minutes.)
 >```
 >$ vim /etc/crontab
->
+>```
+>```
 ># Example of job definition:
 ># .---------------- minute (0 - 59)
 ># |  .------------- hour (0 - 23)
