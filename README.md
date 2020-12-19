@@ -16,19 +16,19 @@
 
 ## List of Contents
 
-1. [Features](#features)
-2. [Demo](#demo)
-3. [Backend Server](#backend server)
-4. [Database](#database)
-5. [Architecture](#architecture)
-6. [Dependencies](#dependencies)
-6. [Backend Server Security](#backend server security)
+1. [Features](#1.)
+2. [Demo](#2.)
+3. [Backend Server](#3.)
+4. [Database](#4.)
+5. [Architecture](#5.)
+6. [Dependencies](#6.)
+7. [Backend Server Security](#7.)
 
-## Features
+## 1.Features
 
-## Demo
+## 2.Demo
 
-## Backend Server
+## 3.Backend Server
 firebase and build by self
 
 socket?
@@ -41,16 +41,16 @@ schedule
 
 docker k8s? CI/CD
 
-## Database
+## 4.Database
 firebase
 
 sqlite
 
-## Architecture
+## 5.Architecture
 
-## Dependencies
+## 6.Dependencies
 
-## Backend Server Security
+## 7.Backend Server Security
 
 >**Fail2ban**
 >
