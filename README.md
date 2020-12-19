@@ -29,56 +29,70 @@
 ## Demo
 
 ## Backend Server
+firebase and build by self
+
+socket?
+
+pushnotification firebase?
+
+calculate 
+
+schedule
+
+docker k8s? CI/CD
 
 ## Database
+firebase
+
+sqlite
 
 ## Architecture
 
 ## Dependencies
 
-## Server Security
+## Backend Server Security
 
-**Fail2ban**
-
->Fail2ban is a tool that helps protect your Linux machine from brute-force and other automated attacks by monitoring the services logs for malicious activity.
-
-**Install**
-
-```
-$ sudo apt install fail2ban
-```
-
-**Verify Fail2ban is start or not**
-
->If you see `Active: active (running)`, and  you have Fail2Ban running on your Ubuntu server.
-
-```
-$ sudo systemctl status fail2ban
-```
-
-**The way to configure Fail2ban is to copy the `jail.conf` to `jail.local` and modify the `.local` file.**
-
->**Ban Settings**
+>**Fail2ban**
 >
->* bantime is the duration for which the IP is banned.
-> 
->> ```bantime=1d```
+>>Fail2ban is a tool that helps protect your Linux machine from brute-force and other automated attacks by monitoring the services logs for malicious activity.
 >
->* maxretry is the number of failures before an IP is banned.
+>**Install**
 >
->> ```maxretry = 5```
+>```
+>$ sudo apt install fail2ban
+>```
 >
->**Email Notifications**
+>**Verify Fail2ban is start or not**
 >
->Fail2ban can send email alerts when an IP has been banned.
+>>If you see `Active: active (running)`, and  you have Fail2Ban running on your Ubuntu server.
 >
->Change `action = %(action_mw)s` to `action = %(action_mwl)s`
+>```
+>$ sudo systemctl status fail2ban
+>```
 >
->Set `destemail = *********@gmail.com` to your email which you want to receive alert. 
-
-**Each time you edit a configuration file, you need to restart the Fail2ban service for changes to take effect.**
-
-```
-$ sudo systemctl restart fail2ban
-```
-
+>**The way to configure Fail2ban is to copy the `jail.conf` to `jail.local` and modify the `.local` file.**
+>
+>>**Ban Settings**
+>>
+>>* bantime is the duration for which the IP is banned.
+>> 
+>>> ```bantime=1d```
+>>
+>>* maxretry is the number of failures before an IP is banned.
+>>
+>>> ```maxretry = 5```
+>>
+>>**Email Notifications**
+>>
+>>Fail2ban can send email alerts when an IP has been banned.
+>>
+>>Change `action = %(action_mw)s` to `action = %(action_mwl)s`
+>>
+>>Set `destemail = *********@gmail.com` to your email which you want to receive alert. 
+>
+>**Each time you edit a configuration file, you need to restart the Fail2ban service for changes to take effect.**
+>
+>```
+>$ sudo systemctl restart fail2ban
+>```
+***
