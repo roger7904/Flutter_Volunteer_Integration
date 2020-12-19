@@ -22,7 +22,7 @@
 4. [Database](#database)
 5. [Architecture](#architecture)
 6. [Dependencies](#dependencies)
-6. [Security](#security)
+6. [Backend Server Security](#backendserversecurity)
 
 ## Features
 
