@@ -100,6 +100,7 @@ sqlite
 >>We also write shell by ourself to strengthen host protection.
 >>
 >**banip.sh**
+>We write this script to ban the ip trying to connect to our host via ssh
 >```
 ># Define the newly added ip and historical ip files.
 >ban="/tmp/bannedhosts.txt"
