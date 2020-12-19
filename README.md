@@ -132,7 +132,10 @@ sqlite
 >mv -f /tmp/history.tmp $history
 >rm -rf $ban
 >```
->
+>Make this file executable
+>```
+>$ chmod 755 /{your file path}/banip.sh
+>```
 >You can simply use this command.
 >```
 >$ bash banip.sh
