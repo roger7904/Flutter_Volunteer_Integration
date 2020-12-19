@@ -136,11 +136,11 @@ sqlite
 >```
 >$ chmod 755 /{your file path}/banip.sh
 >```
->You can simply use this command.
+>You can simply use this command to run this script.
 >```
 >$ bash banip.sh
 >```
->or put in crontab for routine execution.
+>or put in crontab for routine execution.(This example lets it run every five minutes.)
 >```
 >$ vim /etc/crontab
 >
