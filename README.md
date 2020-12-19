@@ -95,7 +95,7 @@ sqlite
 >```
 >$ sudo systemctl restart fail2ban
 >```
-***
+---
 >**Shell Script**
 >>We also write shell by ourself to strengthen host protection.
 >>
@@ -132,6 +132,7 @@ sqlite
 >mv -f /tmp/history.tmp $history
 >rm -rf $ban
 >```
+>
 >You can simply use this command.
 >```
 >$ bash banip.sh
