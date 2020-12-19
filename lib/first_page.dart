@@ -13,29 +13,6 @@ class first_page extends StatefulWidget {
 
 class _first_pageState extends State<first_page>
     with SingleTickerProviderStateMixin {
-  // AnimationController controller;
-  // Animation animation;
-
-  @override
-  void initState() {
-    super.initState();
-
-    // controller =
-    //     AnimationController(duration: Duration(seconds: 1), vsync: this);
-    // animation = ColorTween(begin: Colors.blueGrey, end: Colors.white)
-    //     .animate(controller);
-    // controller.forward();
-    // controller.addListener(() {
-    //   setState(() {});
-    // });
-  }
-
-  @override
-  void dispose() {
-    // controller.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,14 +46,14 @@ class _first_pageState extends State<first_page>
                 height: 48.0,
               ),
               RoundedButton(
-                title: 'Log In',
+                title: 'Log in',
                 colour: Colors.teal[600],
                 onPressed: () {
                   Navigator.pushNamed(context, login_page.id);
                 },
               ),
               RoundedButton(
-                title: 'Register',
+                title: 'Sign up',
                 colour: Colors.teal[200],
                 onPressed: () {
                   Navigator.pushNamed(context, signup_page.id);
