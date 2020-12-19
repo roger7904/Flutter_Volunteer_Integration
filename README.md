@@ -50,7 +50,7 @@ sqlite
 
 ## Dependencies
 
-## Server Security
+## Backend Server Security
 
 **Fail2ban**
 
