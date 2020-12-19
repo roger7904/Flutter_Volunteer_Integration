@@ -24,9 +24,9 @@
 6. [Dependencies](#6)
 7. [Backend Server Security](#7)
 
-<h3 id="41">Features</h3>
+<h2 id="41">Features</h2>
 
-## 2.Demo
+## Demo
 
 ## 3.Backend Server
 firebase and build by self
