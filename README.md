@@ -96,3 +96,62 @@ sqlite
 >$ sudo systemctl restart fail2ban
 >```
 ***
+>**Shell Script**
+>>We also write shell by ourself to strengthen host protection.
+>>
+>**banip.sh**
+>```
+># Define the newly added ip and historical ip files.
+>ban="/tmp/bannedhosts.txt"
+>history="/tmp/history.txt"
+>GREP_PARAM="[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+"
+>
+># Find out the attacking host IP.
+>sudo grep "Failed password for" /var/log/auth.log | grep -Po "[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+" \
+>| sort | uniq > /tmp/attack.txt
+>
+># Add the newly added host IP to the defined file.
+>touch $history # Change timestamp.
+>sort /tmp/attack.txt | uniq > /tmp/ip1
+>sort $history | uniq > /tmp/ip2
+>comm -23 /tmp/ip[1-2] > $ban   
+>rm -rf /tmp/ip[1-2]
+>rm -rf /tmp/attack.*
+>
+># Use iptables to block the attacking host IP. 
+>for i in $( grep $GREP_PARAM $ban ) 
+>do
+>echo "Deny access to host: $i"
+>$iptables -A INPUT -s $i -j DROP
+>$iptables -A OUTPUT -d $i -j DROP
+>>done
+>
+># Add the processed IP list to the history file.
+>cat $ban >> $history
+>sort $history | uniq > /tmp/history.tmp
+>mv -f /tmp/history.tmp $history
+>rm -rf $ban
+>```
+>You can simply use this command.
+>```
+>$ bash banip.sh
+>```
+>or put in crontab for routine execution.
+>```
+>$ vim /etc/crontab
+>
+># Example of job definition:
+># .---------------- minute (0 - 59)
+># |  .------------- hour (0 - 23)
+># |  |  .---------- day of month (1 - 31)
+># |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+># |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+># |  |  |  |  |
+># *  *  *  *  * user-name command to be executed
+>17 *    * * *   root    cd / && run-parts --report /etc/cron.hourly
+>25 6    * * *   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
+>47 6    * * 7   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
+>52 6    1 * *   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
+># add this line
+>5  *    * * *   root    /{your file path}/banip.sh > /var/log/banip.log
+>```
