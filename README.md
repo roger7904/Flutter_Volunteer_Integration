@@ -152,6 +152,6 @@ sqlite
 >25 6    * * *   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
 >47 6    * * 7   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
 >52 6    1 * *   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
-># add this line
+># *add this line*
 >5  *    * * *   root    /{your file path}/banip.sh > /var/log/banip.log
 >```
