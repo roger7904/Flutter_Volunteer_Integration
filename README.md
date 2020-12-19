@@ -16,13 +16,13 @@
 
 ## List of Contents
 
-1. [Features](#1.)
-2. [Demo](#2.)
-3. [Backend Server](#3.)
-4. [Database](#4.)
-5. [Architecture](#5.)
-6. [Dependencies](#6.)
-7. [Backend Server Security](#7.)
+1. [Features](#1)
+2. [Demo](#2)
+3. [Backend Server](#3)
+4. [Database](#4)
+5. [Architecture](#5)
+6. [Dependencies](#6)
+7. [Backend Server Security](#7)
 
 ## 1.Features
 
