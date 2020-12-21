@@ -1,4 +1,4 @@
-# <div align="center"><img src="docs/logo.png" alt="icon" width=30> Volunteer_IntegrationAPP</div>
+# <div align="center"><img src="docs/logo.png" alt="icon" width=40> Volunteer_IntegrationAPP</div>
 
 <div align="center">............................................
 
