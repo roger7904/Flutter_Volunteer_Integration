@@ -5,6 +5,8 @@
 
 ![flutter](https://img.shields.io/badge/Flutter-Framework-green?logo=flutter)
 ![Dart](https://img.shields.io/badge/Dart-Language-blue?logo=dart)
+![Ubuntu](https://img.shields.io/badge/Ubuntu20.04-Server-red?logo=Ubuntu)
+![SQLite](https://img.shields.io/badge/SQLite-Database-9cf?logo=sqlite)
 
 <img src="docs/androidhome.gif" width="200" height="412"/>
 &nbsp;&nbsp;&nbsp;&nbsp;
