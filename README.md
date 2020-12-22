@@ -41,7 +41,7 @@ calculate
 
 schedule
 
-docker k8s? CI/CD
+docker k8s CI/CD
 
 <h2 id="database">Database</h2>
 firebase
