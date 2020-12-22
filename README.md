@@ -16,10 +16,6 @@
 
 ***
 
-### Introducing Volunteer_Integration
-
-...........................
-
 ## List of Contents
 
 1. [Features](#features)
