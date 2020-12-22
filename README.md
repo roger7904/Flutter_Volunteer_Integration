@@ -1,6 +1,6 @@
 # <div align="center"><img src="docs/logo.png" alt="icon" width=40> Volunteer_IntegrationAPP</div>
 
-<div align="center">I
+<div align="center">Introducing Volunteer Integration
 
 
 ![flutter](https://img.shields.io/badge/Flutter-Framework-green?logo=flutter)
